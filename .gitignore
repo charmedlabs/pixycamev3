@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.swp
+*.log
+dist/
+*.egg-info
+build/
+venv/
+.vscode/

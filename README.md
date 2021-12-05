@@ -5,7 +5,7 @@ the LEGO Mindstorms EV3.
 
 ## Requirements
 
-1. Pixy2 for LEGO Mindstorms EV3 camera.
+1. Pixy2 or Pixy2.1 for LEGO Mindstorms EV3 camera.
 2. LEGO Mindstorms EV3 brick, running the ev3dev operatingsystem.
 
 ## Installation
@@ -21,9 +21,10 @@ An extensive tutorial on how to use pixycamev3 can be found on
 
 ## Useful links
 
-* Charmed Labs [homepage](https://pixycam.com)
+* Charmed Labs [homepage](https://www.charmedlabs.com)
 * Pixy2 for LEGO Mindstorms EV3 [wiki](https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:lego_wiki)
-* pixycamEV3 [tutorial](https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:lego_wiki)
+* pixycamev3 [tutorial](https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:python)
+* pixycamev3 [source](https://github.com/charmedlabs/pixycamev3)
 * ev3dev [homepage](https://ev3dev.org)
 
 

@@ -8,13 +8,17 @@ setuptools.setup(
     version='0.1.0',
     author='Kees Smit',
     author_email='kwsmit@hetnet.nl',
-    description='Python API for Pixy2 on LEGO Mindstorms EV3',
+    description='Python3 API for Pixy2 on LEGO Mindstorms EV3',
     long_description=long_description,
     packages=['pixycamev3'],
-    url='http://pypi.python.org/pypi/pixycamev3/',
+    url='https://github.com/charmedlabs/pixycamev3',
+    project_urls = {
+        'Documentation': 'https://docs.pixycam.com/wiki/doku.php?id=wiki:v2:python',
+        'Bug tracker': 'https://github.com/charmedlabs/pixycamev3/issues',
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GNU GPLv3",
-        "Operating System :: ev3dev2",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+        "Development Status :: 4 - Beta"
     ],
 )
