@@ -5,11 +5,12 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='pixycamev3',
-    version='0.1.0',
+    version='0.2.0',
     author='Kees Smit',
     author_email='kwsmit@hetnet.nl',
     description='Python3 API for Pixy2 on LEGO Mindstorms EV3',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     packages=['pixycamev3'],
     url='https://github.com/charmedlabs/pixycamev3',
     project_urls = {

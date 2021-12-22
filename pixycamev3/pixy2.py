@@ -16,8 +16,8 @@ MainFeatures    -- Linetracking data
 
 
 Author  : Kees Smit
-Date    : November 28 2021
-Version : 1.00
+Date    : December 22 2021
+Version : 1.10
 License : GNU General Public License v2
 
 Charmed Labs, www.charmedlabs.com
@@ -64,20 +64,22 @@ from time import sleep
 
 # Check program is running on LEGO MINDSTORMS EV3
 BOARD_INFO_DIR = '/sys/class/board-info/'
-msg = 'Wrong platform: program can only run on LEGO MINDSTORMS EV3'
-if not os.path.exists(BOARD_INFO_DIR):
-    raise PlatformError(msg, 'PlatformError')
+msg_plf_error = 'Wrong platform: can only run on LEGO MINDSTORMS EV3'
+try:
+    # Check if BOARD_INFO_DIR exists
+    os.listdir(BOARD_INFO_DIR)
+except:
+    raise PlatformError(msg_plf_error, 'PlatformError')
 
 boards = os.listdir(BOARD_INFO_DIR)
 for board in boards:
-    filename = os.path.join(BOARD_INFO_DIR, board, 'uevent')
-    if os.path.exists(filename):
-        with open(filename, 'r') as fn:
-            for line in fn.readlines():
-                (key, value) = line.strip().split('=')
-                if key == 'BOARD_INFO_MODEL':
-                    if value != 'LEGO MINDSTORMS EV3':
-                        raise PlatformError(msg, 'PlatformError')
+    filename = BOARD_INFO_DIR + '/' + board + '/uevent'
+    with open(filename, 'r') as fn:
+        for line in fn.readlines():
+            (key, value) = line.strip().split('=')
+            if key == 'BOARD_INFO_MODEL':
+                if value != 'LEGO MINDSTORMS EV3':
+                    raise PlatformError(msg_plf_error, 'PlatformError')
 
 # Check current Python interpreter
 if sys.implementation.name == 'cpython':
