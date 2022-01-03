@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='pixycamev3',
-    version='0.2.0',
+    version='1.0.0',
     author='Kees Smit',
     author_email='kwsmit@hetnet.nl',
     description='Python3 API for Pixy2 on LEGO Mindstorms EV3',
@@ -20,6 +20,6 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
-        "Development Status :: 4 - Beta"
+        "Development Status :: 5 - Production/Stable"
     ],
 )

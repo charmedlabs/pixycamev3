@@ -8,6 +8,9 @@ the LEGO Mindstorms EV3.
 1. Pixy2 or Pixy2.1 for LEGO Mindstorms EV3 camera.
 2. LEGO Mindstorms EV3 brick, running the ev3dev operatingsystem.
 
+This software is tested with the latest official release of ev3dev
+(ev3dev-stretch-ev3-generic-2020-04-10).
+
 ## Installation
 
 ```
@@ -29,4 +32,4 @@ An extensive tutorial on how to use pixycamev3 can be found on
 
 
 
-2021 Charmed Labs, www.charmedlabs.com
+2022 Charmed Labs, www.charmedlabs.com

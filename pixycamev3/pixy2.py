@@ -382,14 +382,11 @@ class Pixy2:
         if angle >= 0:
             data = [174, 193, 60, 2, angle, 0]
         else:
-            data = [174, 193, 60, 2, angle, -1]
-        response_type = 1
-        self.pixy2_request(data, response_type)
-
-    def set_vector(self, index):
-        """ Set vector to use at an intersection, use this method when
-        Pixy2 is in mode LINE_MODE_MANUAL_SELECT_VECTOR."""
-        data = [174, 193, 56, 1, index]
+            if PLF == 'cp':
+                angle_bytes = angle.to_bytes(2, 'little', signed=True)
+            elif PLF == 'mp':
+                angle_bytes = angle.to_bytes(2, 'little', True)
+            data = [174, 193, 60, 2, angle_bytes[0], angle_bytes[1]]
         response_type = 1
         self.pixy2_request(data, response_type)
 
