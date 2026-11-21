@@ -340,11 +340,16 @@ class Pixy2:
                 intersection.y = data[1]
                 intersection.nr_of_branches = data[2]
                 for i in range(0, intersection.nr_of_branches):
-                    i4 = i*4
+                    # Branches start after the 4-byte header (x, y, n, reserved);
+                    # each is {index, reserved, int16 angle (little endian)}
+                    i4 = 4 + i*4
                     branch.index = data[i4+0]
-                    branch.angle = data[14+1]
                     branch.angle_byte1 = data[i4+2]
                     branch.angle_byte2 = data[i4+3]
+                    angle = branch.angle_byte1 | (branch.angle_byte2 << 8)
+                    if angle > 32767:
+                        angle -= 65536
+                    branch.angle = angle
                     intersection.add_branch(branch)
                 mainfeatures.add_intersection(intersection)
             elif feature_type == 4:
